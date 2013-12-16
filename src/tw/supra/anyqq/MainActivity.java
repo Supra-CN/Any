@@ -3,7 +3,6 @@ package tw.supra.anyqq;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,18 +12,33 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.ProgressBar;
 
+import tw.supra.anyqq.manager.UIManager;
+import tw.supra.anyqq.view.PullToRefreshBase.OnRefreshListener;
 import tw.supra.anyqq.view.PullToRefreshWebView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
     // private WebView wv;
     private PullToRefreshWebView mContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        UIManager.create(this);
+        setContentView(R.layout.activity_main);
         mContainer = new PullToRefreshWebView(this);
-        setContentView(mContainer);
+        ((FrameLayout)findViewById(R.id.container)).addView(mContainer);
+        mContainer.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(mContainer.refreshableView != null){
+                    mContainer.setRefreshing(false);
+                    mContainer.refreshableView.reload();
+                }
+            }
+        });
     }
 
     @Override
@@ -35,7 +49,6 @@ public class MainActivity extends Activity {
         } else {
             loadUrl("http://m.renren.com");
         }
-
     }
 
     @Override
@@ -101,6 +114,7 @@ public class MainActivity extends Activity {
                 switch (which) {
                     case AlertDialog.BUTTON_POSITIVE:
                         startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
+                        finish();
                         break;
 
                     case AlertDialog.BUTTON_NEGATIVE:

@@ -15,42 +15,31 @@
 
 package tw.supra.anyqq;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Message;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.GeolocationPermissions.Callback;
-import android.webkit.WebStorage.QuotaUpdater;
 import android.webkit.ConsoleMessage;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
-import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebStorage.QuotaUpdater;
 import android.webkit.WebView;
-import android.widget.EditText;
-import android.widget.TextView;
+
+import tw.supra.anyqq.manager.UIManager;
 
 public class CustomWebChromeClient extends WebChromeClient {
     private static final String LOG_TAG = "supra-anyqq";
 
-    // private UIManager mUIManager;
-
     private Bitmap mDefaultVideoPoster = null;
     private View mVideoProgressView = null;
 
-    // public CustomWebChromeClient(UIManager uiManager) {
-    // mUIManager = uiManager;
-    // }
+    public CustomWebChromeClient() {
+    }
 
     @Override
     public void onProgressChanged(WebView view, int newProgress) {
         // mUIManager.onProgressChanged(view, newProgress);
+        UIManager.getInstance().setProgress(newProgress);
         Log.i(LOG_TAG, "progress:" + newProgress);
     }
 
@@ -59,12 +48,12 @@ public class CustomWebChromeClient extends WebChromeClient {
         // mUIManager.onReceivedTitle(view, title);\
         Log.i(LOG_TAG, "title:" + title);
 
-//        if (!view.isPrivateBrowsingEnabled()) {
-            // UpdateHistoryTask task = new
-            // UpdateHistoryTask(mUIManager.getMainActivity());
-            // task.execute(view.getTitle(), view.getUrl(),
-            // view.getOriginalUrl());
-//        }
+        // if (!view.isPrivateBrowsingEnabled()) {
+        // UpdateHistoryTask task = new
+        // UpdateHistoryTask(mUIManager.getMainActivity());
+        // task.execute(view.getTitle(), view.getUrl(),
+        // view.getOriginalUrl());
+        // }
     }
 
     @Override
@@ -179,38 +168,41 @@ public class CustomWebChromeClient extends WebChromeClient {
     public boolean onJsPrompt(WebView view, String url, String message,
             String defaultValue, final JsPromptResult result) {
 
-//        final LayoutInflater factory =
-//                LayoutInflater.from(mUIManager.getMainActivity());
-//        final View v = factory.inflate(R.layout.javascript_prompt_dialog, null);
-//        ((TextView) v.findViewById(R.id.JavaScriptPromptMessage)).setText(message);
-//        ((EditText) v.findViewById(R.id.JavaScriptPromptInput)).setText(defaultValue);
-//
-//        new AlertDialog.Builder(mUIManager.getMainActivity())
-//                .setTitle(R.string.JavaScriptPromptDialog)
-//                .setView(v)
-//                .setPositiveButton(android.R.string.ok,
-//                        new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int whichButton) {
-//                                String value = ((EditText)
-//                                        v.findViewById(R.id.JavaScriptPromptInput)).getText()
-//                                                .toString();
-//                                result.confirm(value);
-//                            }
-//                        })
-//                .setNegativeButton(android.R.string.cancel,
-//                        new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int whichButton) {
-//                                result.cancel();
-//                            }
-//                        })
-//                .setOnCancelListener(
-//                        new DialogInterface.OnCancelListener() {
-//                            public void onCancel(DialogInterface dialog) {
-//                                result.cancel();
-//                            }
-//                        })
-//                .show();
-//        return true;
+        // final LayoutInflater factory =
+        // LayoutInflater.from(mUIManager.getMainActivity());
+        // final View v = factory.inflate(R.layout.javascript_prompt_dialog,
+        // null);
+        // ((TextView)
+        // v.findViewById(R.id.JavaScriptPromptMessage)).setText(message);
+        // ((EditText)
+        // v.findViewById(R.id.JavaScriptPromptInput)).setText(defaultValue);
+        //
+        // new AlertDialog.Builder(mUIManager.getMainActivity())
+        // .setTitle(R.string.JavaScriptPromptDialog)
+        // .setView(v)
+        // .setPositiveButton(android.R.string.ok,
+        // new DialogInterface.OnClickListener() {
+        // public void onClick(DialogInterface dialog, int whichButton) {
+        // String value = ((EditText)
+        // v.findViewById(R.id.JavaScriptPromptInput)).getText()
+        // .toString();
+        // result.confirm(value);
+        // }
+        // })
+        // .setNegativeButton(android.R.string.cancel,
+        // new DialogInterface.OnClickListener() {
+        // public void onClick(DialogInterface dialog, int whichButton) {
+        // result.cancel();
+        // }
+        // })
+        // .setOnCancelListener(
+        // new DialogInterface.OnCancelListener() {
+        // public void onCancel(DialogInterface dialog) {
+        // result.cancel();
+        // }
+        // })
+        // .show();
+        // return true;
 
         Log.i(LOG_TAG, "onJsPrompt");
         return super.onJsPrompt(view, url, message, defaultValue, result);
@@ -246,32 +238,32 @@ public class CustomWebChromeClient extends WebChromeClient {
     // public void onGeolocationPermissionsHidePrompt() {
     // mUIManager.onGeolocationPermissionsHidePrompt();
     // }
-    
+
     @Override
     public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
         Log.i(LOG_TAG, "onConsoleMessage");
         return super.onConsoleMessage(consoleMessage);
     }
-    
+
     @Override
     public boolean onJsBeforeUnload(WebView view, String url, String message, JsResult result) {
         Log.i(LOG_TAG, "onJsBeforeUnload");
         return super.onJsBeforeUnload(view, url, message, result);
     }
-    
+
     @Override
     public boolean onJsTimeout() {
         Log.i(LOG_TAG, "onJsTimeout");
         return super.onJsTimeout();
     }
-    
+
     @Override
     public void onExceededDatabaseQuota(String url, String databaseIdentifier, long quota,
             long estimatedDatabaseSize, long totalQuota, QuotaUpdater quotaUpdater) {
         Log.i(LOG_TAG, "onExceededDatabaseQuota");
-        super.onExceededDatabaseQuota(url, databaseIdentifier, quota, estimatedDatabaseSize, totalQuota,
+        super.onExceededDatabaseQuota(url, databaseIdentifier, quota, estimatedDatabaseSize,
+                totalQuota,
                 quotaUpdater);
     }
-    
 
 }
