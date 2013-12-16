@@ -24,8 +24,8 @@ public class MainActivity extends Activity {
     protected void onStart() {
         super.onStart();
         if (null != wv && TextUtils.isEmpty(wv.getUrl())) {
-            wv.loadUrl("http://w.qq.com");
-//            wv.loadUrl("http://www.baidu.com");
+            wv.loadUrl("http://m.renren.com");
+            
         }
     }
 

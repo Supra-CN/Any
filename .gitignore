@@ -1,0 +1,6 @@
+.svn
+bin
+gen
+.DS_Store
+.settings/org.eclipse.jdt.core.prefs  
+.settings

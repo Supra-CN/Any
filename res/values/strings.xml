@@ -4,5 +4,15 @@
     <string name="app_name">AnyQQ</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="readmode_pull_nextpage">Pull to load next page</string>
+    <string name="readmode_pull_lastpage">Pull to quit Reader Mode</string>
+    <string name="readmode_refresh_nextpage">Loading next page...</string>
+    <string name="readmode_refresh_lastpage">Exiting...</string>
+    <string name="readmode_release_nextpage">Release to go to the next page</string>
+    <string name="readmode_release_lastpage">Release to exit Reader Mode</string>
+    <string name="readmode_load_next_error">Please make sure you have a working internet connection and try again. </string>
+    <string name="readmode_load_next_error_finish">Loading next page failed, exiting Reader Mode now.</string>
+    <string name="readmode_tip">Tap here to enter Reader Mode</string>
 
 </resources>
