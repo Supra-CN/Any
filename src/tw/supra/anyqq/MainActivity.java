@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.ProgressBar;
 
 import tw.supra.anyqq.manager.UIManager;
 import tw.supra.anyqq.view.PullToRefreshBase.OnRefreshListener;
@@ -22,6 +21,8 @@ import tw.supra.anyqq.view.PullToRefreshWebView;
 public class MainActivity extends Activity{
     // private WebView wv;
     private PullToRefreshWebView mContainer;
+    private AlertDialog mNetworkDialog;
+    private AlertDialog mExitDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +64,8 @@ public class MainActivity extends Activity{
         CustomWebView wv = getWebView();
         if (wv.canGoBack()) {
             wv.goBack();
-            // }else{
-            // moveTaskToBack(true);
+             }else{
+             getExitDialog();
         }
     }
 
@@ -105,8 +106,54 @@ public class MainActivity extends Activity{
                 .getSystemService(Context.CONNECTIVITY_SERVICE)))
                 .getActiveNetworkInfo();
     }
+    
+    private AlertDialog getExitDialog(){
+        if(mExitDialog == null){
+            mExitDialog = createExitDialog();
+        }
+        return mExitDialog;
+    }
 
     private AlertDialog getNetWorkDialog() {
+        if(mNetworkDialog == null){
+            mNetworkDialog = createNetWorkDialog();
+        }
+        return mNetworkDialog;
+    }
+    
+    private AlertDialog createExitDialog(){
+        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case AlertDialog.BUTTON_POSITIVE:
+                        finish();
+                        break;
+                        
+                    case AlertDialog.BUTTON_NEUTRAL:
+                        moveTaskToBack(true);
+                        break;
+                        
+                    case AlertDialog.BUTTON_NEGATIVE:
+                        dialog.cancel();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.exit_dialog_title);
+        builder.setMessage(R.string.exit_dialog_msg);
+        builder.setPositiveButton(R.string.exit_dialog_positive, listener);
+        builder.setNeutralButton(R.string.exit_dialog_neutral, listener);
+        builder.setNegativeButton(R.string.exit_dialog_negative, listener);
+        return builder.create();
+    }
+    
+    private AlertDialog createNetWorkDialog() {
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
 
             @Override
@@ -114,7 +161,6 @@ public class MainActivity extends Activity{
                 switch (which) {
                     case AlertDialog.BUTTON_POSITIVE:
                         startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
-                        finish();
                         break;
 
                     case AlertDialog.BUTTON_NEGATIVE:

@@ -15,9 +15,12 @@
 
 package tw.supra.anyqq;
 
+import android.annotation.TargetApi;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.webkit.ConsoleMessage;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
@@ -35,14 +38,23 @@ public class CustomWebChromeClient extends WebChromeClient {
 
     public CustomWebChromeClient() {
     }
+    
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private void updateAlpha(WebView view, int newProgress){
+        float toAlpha = (newProgress / 100f);
+        AlphaAnimation anim = new AlphaAnimation(view.getAlpha(), toAlpha);
+        anim.setDuration(500);
+        view.startAnimation(anim);
+    }
 
     @Override
     public void onProgressChanged(WebView view, int newProgress) {
         // mUIManager.onProgressChanged(view, newProgress);
         UIManager.getInstance().setProgress(newProgress);
         Log.i(LOG_TAG, "progress:" + newProgress);
+        updateAlpha(view, newProgress);
     }
-
+    
     @Override
     public void onReceivedTitle(WebView view, String title) {
         // mUIManager.onReceivedTitle(view, title);\

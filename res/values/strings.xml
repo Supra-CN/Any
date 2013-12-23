@@ -22,6 +22,10 @@
     <string name="network_dialog_positive">Setting</string>
     <string name="network_dialog_negative">Exit</string>
     
-    
+    <string name="exit_dialog_title">Exit dialog</string>
+    <string name="exit_dialog_msg">Do you want?</string>
+    <string name="exit_dialog_positive">Exit AnyRen</string>
+    <string name="exit_dialog_neutral">Hide AnyRen</string>
+    <string name="exit_dialog_negative">Cancel</string>
 
 </resources>
