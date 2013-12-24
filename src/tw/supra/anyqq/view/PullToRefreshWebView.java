@@ -10,13 +10,12 @@ import tw.supra.anyqq.CustomWebViewClient;
 public class PullToRefreshWebView extends PullToRefreshBase<CustomWebView> {
 
     public PullToRefreshWebView(Context context) {
-        super(context);
+        super(context, MODE_PULL_DOWN_TO_REFRESH);
     }
 
     @Override
     protected CustomWebView createRefreshableView(Context context, AttributeSet attrs) {
         CustomWebView wv = new CustomWebView(context,false);
-        wv.getSettings().setJavaScriptEnabled(true); 
         wv.setWebChromeClient(new CustomWebChromeClient());
         wv.setWebViewClient(new CustomWebViewClient());
         return wv;
@@ -24,7 +23,11 @@ public class PullToRefreshWebView extends PullToRefreshBase<CustomWebView> {
 
     @Override
     protected boolean isReadyForPullDown() {
-        return refreshableView.getScrollY() == 0;
+        if(!isRefreshing() && getRefreshableView().getScrollY() == 0){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override

@@ -480,7 +480,7 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 	// Methods
 	// ===========================================================
 
-	protected void resetHeader() {
+    protected void resetHeader() {
 		state = PULL_TO_REFRESH;
 		isBeingDragged = false;
 

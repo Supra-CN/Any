@@ -38,23 +38,31 @@ public class CustomWebChromeClient extends WebChromeClient {
 
     public CustomWebChromeClient() {
     }
-    
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    private void updateAlpha(WebView view, int newProgress){
+    private void updateAlpha(WebView view, int newProgress) {
+        float fromAlpha = view.getAlpha();
         float toAlpha = (newProgress / 100f);
-        AlphaAnimation anim = new AlphaAnimation(view.getAlpha(), toAlpha);
-        anim.setDuration(500);
+        if(fromAlpha >= toAlpha){
+            return;
+        }
+        AlphaAnimation anim = new AlphaAnimation(fromAlpha, toAlpha);
+        anim.setDuration(1000);
         view.startAnimation(anim);
     }
 
     @Override
     public void onProgressChanged(WebView view, int newProgress) {
         // mUIManager.onProgressChanged(view, newProgress);
-        UIManager.getInstance().setProgress(newProgress);
+        UIManager.getInstance().onLoad(newProgress);
+        
         Log.i(LOG_TAG, "progress:" + newProgress);
-        updateAlpha(view, newProgress);
+
+        if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.HONEYCOMB) {
+            updateAlpha(view, newProgress);
+        }
     }
-    
+
     @Override
     public void onReceivedTitle(WebView view, String title) {
         // mUIManager.onReceivedTitle(view, title);\

@@ -5,22 +5,18 @@
     <string name="hello_world">Hello world!</string>
     
     <string name="action_settings">Settings</string>
+    <string name="action_clean">Clean</string>
     <string name="action_exit">Exit</string>
     
-    <string name="readmode_pull_nextpage">Pull to load next page</string>
-    <string name="readmode_pull_lastpage">Pull to quit Reader Mode</string>
-    <string name="readmode_refresh_nextpage">Loading next page...</string>
-    <string name="readmode_refresh_lastpage">Exiting...</string>
-    <string name="readmode_release_nextpage">Release to go to the next page</string>
-    <string name="readmode_release_lastpage">Release to exit Reader Mode</string>
-    <string name="readmode_load_next_error">Please make sure you have a working internet connection and try again. </string>
-    <string name="readmode_load_next_error_finish">Loading next page failed, exiting Reader Mode now.</string>
-    <string name="readmode_tip">Tap here to enter Reader Mode</string>
+    <string name="readmode_pull_nextpage">Pull to reload</string>
+    <string name="readmode_refresh_nextpage">Loading&#8230;</string>
+    <string name="readmode_release_nextpage">Release to go to reload</string>
     
     <string name="network_dialog_title">Network Not Available!</string>
     <string name="network_dialog_msg">there is no available network! please checkout network settings.</string>
     <string name="network_dialog_positive">Setting</string>
-    <string name="network_dialog_negative">Exit</string>
+    <string name="network_dialog_neutral">Exit</string>
+    <string name="network_dialog_negative">Cancel</string>
     
     <string name="exit_dialog_title">Exit dialog</string>
     <string name="exit_dialog_msg">Do you want?</string>

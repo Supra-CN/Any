@@ -43,12 +43,11 @@ public class CustomWebView extends WebView implements DownloadListener {
 	private static Method sWebSettingsSetProperty = null;
 	
 	public CustomWebView(Context context, boolean privateBrowsing) {
-		this(context, null, privateBrowsing);
+		this(context, null);
 	}
 	
-	public CustomWebView(Context context, AttributeSet attrs, boolean privateBrowsing) {
-		super(context, attrs, android.R.attr.webViewStyle, privateBrowsing);
-		
+	public CustomWebView(Context context, AttributeSet attrs) {
+		super(context, attrs, android.R.attr.webViewStyle);
 		mContext = context;
 		
 		if (!isInEditMode()) {
@@ -157,10 +156,10 @@ public class CustomWebView extends WebView implements DownloadListener {
 		CookieManager.getInstance().setAcceptCookie(true);
 		
 		settings.setSupportZoom(true);
-		settings.setDisplayZoomControls(false);
+//		settings.setDisplayZoomControls(false);
 		settings.setBuiltInZoomControls(true);
 		settings.setSupportMultipleWindows(true);
-		settings.setEnableSmoothTransition(true);
+//		settings.setEnableSmoothTransition(true);
 		
 		// HTML5 API flags
 		settings.setAppCacheEnabled(true);

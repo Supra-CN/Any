@@ -12,13 +12,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.widget.FrameLayout;
 
 import tw.supra.anyqq.manager.UIManager;
 import tw.supra.anyqq.view.PullToRefreshBase.OnRefreshListener;
 import tw.supra.anyqq.view.PullToRefreshWebView;
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity {
     // private WebView wv;
     private PullToRefreshWebView mContainer;
     private AlertDialog mNetworkDialog;
@@ -29,17 +31,8 @@ public class MainActivity extends Activity{
         super.onCreate(savedInstanceState);
         UIManager.create(this);
         setContentView(R.layout.activity_main);
-        mContainer = new PullToRefreshWebView(this);
-        ((FrameLayout)findViewById(R.id.container)).addView(mContainer);
-        mContainer.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                if(mContainer.refreshableView != null){
-                    mContainer.setRefreshing(false);
-                    mContainer.refreshableView.reload();
-                }
-            }
-        });
+        ((FrameLayout) findViewById(R.id.container)).addView(getContainer());
+
     }
 
     @Override
@@ -64,29 +57,68 @@ public class MainActivity extends Activity{
         CustomWebView wv = getWebView();
         if (wv.canGoBack()) {
             wv.goBack();
-             }else{
-             getExitDialog();
+        } else {
+            getExitDialog().show();
         }
-    }
-
-    private CustomWebView getWebView() {
-        if (mContainer != null && mContainer.refreshableView != null) {
-            return mContainer.refreshableView;
-        }
-        return null;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_exit:
-                finish();
+                getExitDialog().show();
                 break;
+
+//            case R.id.action_clean:
+//                getWebView().loadDataWithBaseURL(null, "","text/html", "utf-8",null);
+//                getWebView().clearCache(true);
+//                CookieSyncManager.createInstance(MainActivity.this);
+//                CookieSyncManager.getInstance().startSync();
+//                CookieManager.getInstance().removeAllCookie();
+//                break;
 
             default:
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public PullToRefreshWebView getContainer() {
+        if (mContainer == null) {
+            mContainer = createContainer();
+            mContainer.setOnRefreshListener(new OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    if (getContainer().getRefreshableView() != null) {
+                        // mContainer.setRefreshing(false);
+                        mContainer.getRefreshableView().reload();
+                    }
+                }
+            });
+
+        }
+        return mContainer;
+    }
+
+    private PullToRefreshWebView createContainer() {
+        PullToRefreshWebView container = new PullToRefreshWebView(this);
+        container.setPullToRefreshEnabled(true);
+        container.setDisableScrollingWhileRefreshing(false);
+
+        // mContainer.setPullLabel(getResources().getString(
+        // R.string.reader_channel_pull_hint));
+        // mContainer.setRefreshingLabel(getResources().getString(
+        // R.string.reader_channel_refresh_hint));
+        // mContainer.setReleaseLabel(getResources().getString(
+        // R.string.reader_channel_release_hint));
+        return container;
+    }
+
+    private CustomWebView getWebView() {
+        if (mContainer != null && mContainer.getRefreshableView() != null) {
+            return mContainer.getRefreshableView();
+        }
+        return null;
     }
 
     private void loadUrl(String url) {
@@ -106,22 +138,22 @@ public class MainActivity extends Activity{
                 .getSystemService(Context.CONNECTIVITY_SERVICE)))
                 .getActiveNetworkInfo();
     }
-    
-    private AlertDialog getExitDialog(){
-        if(mExitDialog == null){
+
+    private AlertDialog getExitDialog() {
+        if (mExitDialog == null) {
             mExitDialog = createExitDialog();
         }
         return mExitDialog;
     }
 
     private AlertDialog getNetWorkDialog() {
-        if(mNetworkDialog == null){
+        if (mNetworkDialog == null) {
             mNetworkDialog = createNetWorkDialog();
         }
         return mNetworkDialog;
     }
-    
-    private AlertDialog createExitDialog(){
+
+    private AlertDialog createExitDialog() {
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
 
             @Override
@@ -130,11 +162,11 @@ public class MainActivity extends Activity{
                     case AlertDialog.BUTTON_POSITIVE:
                         finish();
                         break;
-                        
+
                     case AlertDialog.BUTTON_NEUTRAL:
                         moveTaskToBack(true);
                         break;
-                        
+
                     case AlertDialog.BUTTON_NEGATIVE:
                         dialog.cancel();
                         break;
@@ -152,7 +184,7 @@ public class MainActivity extends Activity{
         builder.setNegativeButton(R.string.exit_dialog_negative, listener);
         return builder.create();
     }
-    
+
     private AlertDialog createNetWorkDialog() {
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
 
@@ -163,8 +195,12 @@ public class MainActivity extends Activity{
                         startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
                         break;
 
-                    case AlertDialog.BUTTON_NEGATIVE:
+                    case AlertDialog.BUTTON_NEUTRAL:
                         finish();
+                        break;
+
+                    case AlertDialog.BUTTON_NEGATIVE:
+                        dialog.cancel();
                         break;
 
                     default:
@@ -177,6 +213,7 @@ public class MainActivity extends Activity{
         builder.setTitle(R.string.network_dialog_title);
         builder.setMessage(R.string.network_dialog_msg);
         builder.setPositiveButton(R.string.network_dialog_positive, listener);
+        builder.setNeutralButton(R.string.network_dialog_neutral, listener);
         builder.setNegativeButton(R.string.network_dialog_negative, listener);
         return builder.create();
     }
