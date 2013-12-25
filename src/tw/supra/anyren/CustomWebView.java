@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  */
 
-package tw.supra.anyqq;
+package tw.supra.anyren;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

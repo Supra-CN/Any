@@ -1,4 +1,4 @@
-package tw.supra.anyqq.view;
+package tw.supra.anyren.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,7 +14,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
-import tw.supra.anyqq.R;
+import tw.supra.anyren.R;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 

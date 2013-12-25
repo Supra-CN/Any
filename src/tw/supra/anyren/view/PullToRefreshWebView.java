@@ -1,11 +1,11 @@
-package tw.supra.anyqq.view;
+package tw.supra.anyren.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
-import tw.supra.anyqq.CustomWebChromeClient;
-import tw.supra.anyqq.CustomWebView;
-import tw.supra.anyqq.CustomWebViewClient;
+import tw.supra.anyren.CustomWebChromeClient;
+import tw.supra.anyren.CustomWebView;
+import tw.supra.anyren.CustomWebViewClient;
 
 public class PullToRefreshWebView extends PullToRefreshBase<CustomWebView> {
 

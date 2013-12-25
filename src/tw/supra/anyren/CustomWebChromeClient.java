@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  */
 
-package tw.supra.anyqq;
+package tw.supra.anyren;
 
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
@@ -28,7 +28,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebStorage.QuotaUpdater;
 import android.webkit.WebView;
 
-import tw.supra.anyqq.manager.UIManager;
+import tw.supra.anyren.manager.UIManager;
 
 public class CustomWebChromeClient extends WebChromeClient {
     private static final String LOG_TAG = "supra-anyqq";

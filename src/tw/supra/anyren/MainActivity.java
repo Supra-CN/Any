@@ -1,5 +1,5 @@
 
-package tw.supra.anyqq;
+package tw.supra.anyren;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,9 +16,10 @@ import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.widget.FrameLayout;
 
-import tw.supra.anyqq.manager.UIManager;
-import tw.supra.anyqq.view.PullToRefreshBase.OnRefreshListener;
-import tw.supra.anyqq.view.PullToRefreshWebView;
+import tw.supra.anyren.R;
+import tw.supra.anyren.manager.UIManager;
+import tw.supra.anyren.view.PullToRefreshWebView;
+import tw.supra.anyren.view.PullToRefreshBase.OnRefreshListener;
 
 public class MainActivity extends Activity {
     // private WebView wv;

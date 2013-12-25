@@ -1,11 +1,11 @@
 
-package tw.supra.anyqq.manager;
+package tw.supra.anyren.manager;
 
 import android.widget.ProgressBar;
 
-import tw.supra.anyqq.MainActivity;
-import tw.supra.anyqq.R;
-import tw.supra.anyqq.view.PullToRefreshWebView;
+import tw.supra.anyren.MainActivity;
+import tw.supra.anyren.R;
+import tw.supra.anyren.view.PullToRefreshWebView;
 
 public class UIManager {
     private static UIManager instance;
