@@ -12,14 +12,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 import android.widget.FrameLayout;
 
-import tw.supra.anyren.R;
+import com.google.analytics.tracking.android.EasyTracker;
+
 import tw.supra.anyren.manager.UIManager;
-import tw.supra.anyren.view.PullToRefreshWebView;
 import tw.supra.anyren.view.PullToRefreshBase.OnRefreshListener;
+import tw.supra.anyren.view.PullToRefreshWebView;
 
 public class MainActivity extends Activity {
     // private WebView wv;
@@ -39,11 +38,18 @@ public class MainActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
         if (!isNetworkAvailable(this)) {
             getNetWorkDialog().show();
         } else {
             loadUrl("http://m.renren.com");
         }
+    }
+    
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
     }
 
     @Override
