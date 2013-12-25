@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Handler;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -15,6 +14,7 @@ import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
 import tw.supra.anyren.R;
+import tw.supra.anyren.utils.Log;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 

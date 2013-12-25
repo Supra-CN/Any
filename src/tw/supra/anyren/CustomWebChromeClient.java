@@ -18,7 +18,6 @@ package tw.supra.anyren;
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.webkit.ConsoleMessage;
@@ -28,7 +27,10 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebStorage.QuotaUpdater;
 import android.webkit.WebView;
 
+import com.google.analytics.tracking.android.MapBuilder;
+
 import tw.supra.anyren.manager.UIManager;
+import tw.supra.anyren.utils.Log;
 
 public class CustomWebChromeClient extends WebChromeClient {
     private static final String LOG_TAG = "supra-anyqq";
@@ -67,7 +69,10 @@ public class CustomWebChromeClient extends WebChromeClient {
     public void onReceivedTitle(WebView view, String title) {
         // mUIManager.onReceivedTitle(view, title);\
         Log.i(LOG_TAG, "title:" + title);
-
+        Log.i(LOG_TAG, "title:" + title);
+        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "title", title, null).build());
+//        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "originalUrl", view.getOriginalUrl(), null).build());
+        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "url", view.getUrl(), null).build());
         // if (!view.isPrivateBrowsingEnabled()) {
         // UpdateHistoryTask task = new
         // UpdateHistoryTask(mUIManager.getMainActivity());

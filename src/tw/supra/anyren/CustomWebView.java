@@ -19,14 +19,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.provider.SyncStateContract.Constants;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.PluginState;
 import android.webkit.WebView;
+
+import tw.supra.anyren.utils.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

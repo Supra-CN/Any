@@ -3,6 +3,8 @@ package tw.supra.anyren.manager;
 
 import android.widget.ProgressBar;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import tw.supra.anyren.MainActivity;
 import tw.supra.anyren.R;
 import tw.supra.anyren.view.PullToRefreshWebView;
@@ -24,6 +26,10 @@ public class UIManager {
         if (instance == null) {
             instance = new UIManager(activity);
         }
+    }
+    
+    public EasyTracker getGaTracker(){
+        return EasyTracker.getInstance(mActivity);
     }
 
     private ProgressBar getProgressBar() {
