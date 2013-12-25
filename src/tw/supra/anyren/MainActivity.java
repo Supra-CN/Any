@@ -193,9 +193,10 @@ public class MainActivity extends Activity {
             }
         };
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.exit_dialog_title);
-        builder.setMessage(R.string.exit_dialog_msg);
-        builder.setPositiveButton(R.string.exit_dialog_positive, listener);
+        builder.setIcon(R.drawable.ic_launcher);
+        builder.setTitle(R.string.about_dialog_title);
+        builder.setMessage(R.string.about_dialog_msg);
+        builder.setPositiveButton(R.string.about_dialog_positive, listener);
         return builder.create();
     }
 
@@ -223,6 +224,7 @@ public class MainActivity extends Activity {
             }
         };
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.ic_launcher);
         builder.setTitle(R.string.exit_dialog_title);
         builder.setMessage(R.string.exit_dialog_msg);
         builder.setPositiveButton(R.string.exit_dialog_positive, listener);
@@ -256,6 +258,7 @@ public class MainActivity extends Activity {
         };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.drawable.ic_launcher);
         builder.setTitle(R.string.network_dialog_title);
         builder.setMessage(R.string.network_dialog_msg);
         builder.setPositiveButton(R.string.network_dialog_positive, listener);

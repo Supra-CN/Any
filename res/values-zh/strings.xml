@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AnyRen</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="action_settings">设置</string>
+    <string name="action_clean">清除缓存</string>
+    <string name="action_about">关于</string>
+    <string name="action_exit">退出</string>
+    
+    <string name="readmode_pull_nextpage">继续下拉刷新</string>
+    <string name="readmode_refresh_nextpage">加载中&#8230;</string>
+    <string name="readmode_release_nextpage">松开刷新</string>
+    
+    <string name="about_dialog_title">关于</string>
+    <string name="about_dialog_msg">AnyApp</string>
+    <string name="about_dialog_positive">好的</string>
+    
+    <string name="network_dialog_title">网络不可用!</string>
+    <string name="network_dialog_msg">没有可用的网络，请检查网络设置.</string>
+    <string name="network_dialog_positive">设置</string>
+    <string name="network_dialog_neutral">退出</string>
+    <string name="network_dialog_negative">取消</string>
+    
+    <string name="exit_dialog_title">退出</string>
+    <string name="exit_dialog_msg">你想要？</string>
+    <string name="exit_dialog_positive">退出</string>
+    <string name="exit_dialog_neutral">最小化</string>
+    <string name="exit_dialog_negative">取消</string>
+
+</resources>

@@ -25,8 +25,8 @@
     
     <string name="exit_dialog_title">Exit</string>
     <string name="exit_dialog_msg">What do you want?</string>
-    <string name="exit_dialog_positive">Exit AnyRen</string>
-    <string name="exit_dialog_neutral">Hide AnyRen</string>
+    <string name="exit_dialog_positive">Exit</string>
+    <string name="exit_dialog_neutral">Hide</string>
     <string name="exit_dialog_negative">Cancel</string>
 
 </resources>

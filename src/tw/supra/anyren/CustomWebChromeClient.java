@@ -91,6 +91,11 @@ public class CustomWebChromeClient extends WebChromeClient {
         // view.getUrl(), view.getOriginalUrl(), icon);
         // task.execute();
     }
+    
+    @Override
+    public void onReceivedTouchIconUrl(WebView view, String url, boolean precomposed) {
+        Log.i(LOG_TAG, "IconUrl:" + url);
+    }
 
     // @Override
     // public boolean onCreateWindow(WebView view, final boolean dialog, final
