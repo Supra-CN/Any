@@ -29,11 +29,12 @@ import android.webkit.WebView;
 
 import com.google.analytics.tracking.android.MapBuilder;
 
+import tw.supra.anyren.ga.GaDef;
 import tw.supra.anyren.manager.UIManager;
 import tw.supra.anyren.utils.Log;
 
 public class CustomWebChromeClient extends WebChromeClient {
-    private static final String LOG_TAG = "supra-anyqq";
+    private static final String LOG_TAG = "supra-anyren";
 
     private Bitmap mDefaultVideoPoster = null;
     private View mVideoProgressView = null;
@@ -70,9 +71,9 @@ public class CustomWebChromeClient extends WebChromeClient {
         // mUIManager.onReceivedTitle(view, title);\
         Log.i(LOG_TAG, "title:" + title);
         Log.i(LOG_TAG, "title:" + title);
-        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "title", title, null).build());
+        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "title", title, null).build());
 //        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "originalUrl", view.getOriginalUrl(), null).build());
-        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "url", view.getUrl(), null).build());
+        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "url", view.getUrl(), null).build());
         // if (!view.isPrivateBrowsingEnabled()) {
         // UpdateHistoryTask task = new
         // UpdateHistoryTask(mUIManager.getMainActivity());

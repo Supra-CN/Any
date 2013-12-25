@@ -15,7 +15,9 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 
+import tw.supra.anyren.ga.GaDef;
 import tw.supra.anyren.manager.UIManager;
 import tw.supra.anyren.view.PullToRefreshBase.OnRefreshListener;
 import tw.supra.anyren.view.PullToRefreshWebView;
@@ -23,6 +25,7 @@ import tw.supra.anyren.view.PullToRefreshWebView;
 public class MainActivity extends Activity {
     // private WebView wv;
     private PullToRefreshWebView mContainer;
+    private AlertDialog mAboutDialog;
     private AlertDialog mNetworkDialog;
     private AlertDialog mExitDialog;
 
@@ -40,6 +43,7 @@ public class MainActivity extends Activity {
         super.onStart();
         EasyTracker.getInstance(this).activityStart(this);
         if (!isNetworkAvailable(this)) {
+            UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "dialog", "network", null).build());
             getNetWorkDialog().show();
         } else {
             loadUrl("http://m.renren.com");
@@ -72,7 +76,13 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_about:
+                UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "dialog", "about", null).build());
+                getAboutDialog().show();
+                break;
+            
             case R.id.action_exit:
+                UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "dialog", "exit", null).build());
                 getExitDialog().show();
                 break;
 
@@ -145,6 +155,13 @@ public class MainActivity extends Activity {
                 .getSystemService(Context.CONNECTIVITY_SERVICE)))
                 .getActiveNetworkInfo();
     }
+    
+    private AlertDialog getAboutDialog(){
+        if (mAboutDialog == null) {
+            mAboutDialog = createAboutDialog();
+        }
+        return mAboutDialog;
+    }
 
     private AlertDialog getExitDialog() {
         if (mExitDialog == null) {
@@ -158,6 +175,28 @@ public class MainActivity extends Activity {
             mNetworkDialog = createNetWorkDialog();
         }
         return mNetworkDialog;
+    }
+    
+    private AlertDialog createAboutDialog(){
+        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case AlertDialog.BUTTON_POSITIVE:
+                        dialog.cancel();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.exit_dialog_title);
+        builder.setMessage(R.string.exit_dialog_msg);
+        builder.setPositiveButton(R.string.exit_dialog_positive, listener);
+        return builder.create();
     }
 
     private AlertDialog createExitDialog() {

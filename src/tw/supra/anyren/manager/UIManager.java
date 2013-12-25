@@ -10,6 +10,7 @@ import tw.supra.anyren.R;
 import tw.supra.anyren.view.PullToRefreshWebView;
 
 public class UIManager {
+    
     private static UIManager instance;
     private MainActivity mActivity;
     private ProgressBar mProgress;
