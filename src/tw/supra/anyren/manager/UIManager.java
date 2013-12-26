@@ -30,7 +30,7 @@ public class UIManager {
     }
     
     public EasyTracker getGaTracker(){
-        return EasyTracker.getInstance(mActivity);
+        return EasyTracker.getInstance(mActivity.getApplicationContext());
     }
 
     private ProgressBar getProgressBar() {

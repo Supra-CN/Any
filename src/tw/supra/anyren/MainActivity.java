@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        EasyTracker.getInstance(this).activityStart(this);
+        UIManager.getInstance().getGaTracker().activityStart(this);
         if (!isNetworkAvailable(this)) {
             UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "dialog", "network", null).build());
             getNetWorkDialog().show();
@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-        EasyTracker.getInstance(this).activityStop(this);
+        UIManager.getInstance().getGaTracker().activityStop(this);
     }
 
     @Override

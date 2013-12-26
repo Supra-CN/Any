@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import tw.supra.anyren.manager.UIManager;
+
 public class AboutDialogActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,18 @@ public class AboutDialogActivity extends Activity {
         setContentView(R.layout.about_view);
         TextView version = (TextView) findViewById(R.id.AboutVersionText);
         version.setText(getVersion());
+    }
+    
+    @Override
+    protected void onStart() {
+        super.onStart();
+        UIManager.getInstance().getGaTracker().activityStart(this);
+    }
+    
+    @Override
+    protected void onStop() {
+        super.onStop();
+        UIManager.getInstance().getGaTracker().activityStart(this);
     }
     
     /**
