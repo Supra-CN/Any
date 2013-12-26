@@ -7,7 +7,10 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 
 import tw.supra.anyren.manager.UIManager;
@@ -20,6 +23,14 @@ public class AboutDialogActivity extends Activity {
         setContentView(R.layout.about_view);
         TextView version = (TextView) findViewById(R.id.AboutVersionText);
         version.setText(getVersion());
+        Button btn = (Button)findViewById(R.id.AboutOkBtn);
+        btn.setOnClickListener(new OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
     
     @Override
