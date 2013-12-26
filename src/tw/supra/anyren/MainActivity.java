@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.google.analytics.tracking.android.EasyTracker;
@@ -19,8 +20,8 @@ import com.google.analytics.tracking.android.MapBuilder;
 
 import tw.supra.anyren.ga.GaDef;
 import tw.supra.anyren.manager.UIManager;
-import tw.supra.anyren.view.PullToRefreshBase.OnRefreshListener;
-import tw.supra.anyren.view.PullToRefreshWebView;
+import tw.supra.anyren.views.PullToRefreshBase.OnRefreshListener;
+import tw.supra.anyren.views.PullToRefreshWebView;
 
 public class MainActivity extends Activity {
     // private WebView wv;
@@ -32,10 +33,10 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NEEDS_MENU_KEY, WindowManager.LayoutParams.FLAG_NEEDS_MENU_KEY);
         UIManager.create(this);
         setContentView(R.layout.activity_main);
         ((FrameLayout) findViewById(R.id.container)).addView(getContainer());
-
     }
 
     @Override
@@ -78,7 +79,9 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.action_about:
                 UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "dialog", "about", null).build());
-                getAboutDialog().show();
+//                getAboutDialog().show();
+                Intent intent = new Intent(getApplicationContext(), AboutDialogActivity.class);
+                startActivity(intent);
                 break;
             
             case R.id.action_exit:
@@ -193,11 +196,14 @@ public class MainActivity extends Activity {
             }
         };
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.drawable.ic_launcher);
-        builder.setTitle(R.string.about_dialog_title);
-        builder.setMessage(R.string.about_dialog_msg);
-        builder.setPositiveButton(R.string.about_dialog_positive, listener);
-        return builder.create();
+//        builder.setView(new AboutView(this));
+//        builder.setIcon(R.drawable.ic_launcher);
+//        builder.setTitle(R.string.about_dialog_title);
+//        builder.setMessage(R.string.about_dialog_msg);
+//        builder.setPositiveButton(R.string.about_dialog_positive, listener);
+        AlertDialog dialog = builder.create();
+//        dialog.setContentView(R.layout.about_view);
+        return dialog;
     }
 
     private AlertDialog createExitDialog() {

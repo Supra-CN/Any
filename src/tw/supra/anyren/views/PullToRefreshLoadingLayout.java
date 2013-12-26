@@ -1,4 +1,4 @@
-package tw.supra.anyren.view;
+package tw.supra.anyren.views;
 
 import android.content.Context;
 import android.view.LayoutInflater;

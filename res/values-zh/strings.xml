@@ -3,6 +3,24 @@
 
     <string name="app_name">AnyRen</string>
     <string name="hello_world">Hello world!</string>
+    <string name="ApplicationDescription">AnyRen是一个轻便的"人人"客户端</string>
+    <string name="AboutInfo">
+        AnyApp系列应用为那些体验欠佳的原生应用提供了另一种服务用户的方式，用户通过AnyApp系列应用，用户可直接体验到内容商提供的web服务，这不仅方便了用户，同时也为内容提供商增加了一个分发渠道。
+        \n\nAnyApp系列应用对用户永久免费;
+        \n\nAnyApp系列应用区分"软件本身"和"展示内容"两部分:
+        \n	其"软件本身"受GPLv3许可证保护，任何人都可以参与完善AnyApp，但是作者保留所有合法权利，(如需沟通请参见作者联系方式);
+        \n	其"展示内容"为内容提供商公布的公共域名，"软件本身"并未对其内容做任何修改，不存在任何侵权行为，也不对其内容做任何担保；
+        \n\n作者联系方式：
+        \n  王佳 | Supra.W
+        \n  Email：supra.cn@gmail.com
+        \n  QQ:273423804
+    </string>
+    <string name="AboutPoweredBy">powered by Supra\'s Garage.</string>
+    <string name="AboutContentBy">content by Renren Inc.</string>
+    <string name="AboutVersionText">Version: %1$s (%2$s)</string>
+    <string name="AboutLicenseText">License: GPLv3</string>
+    <string name="AboutUrlText">https://github.com/Supra-CN/AnyRen</string>
+    <string name="AboutOkBtn">好的</string>
     
     <string name="action_settings">设置</string>
     <string name="action_clean">清除缓存</string>
@@ -12,10 +30,6 @@
     <string name="readmode_pull_nextpage">继续下拉刷新</string>
     <string name="readmode_refresh_nextpage">加载中&#8230;</string>
     <string name="readmode_release_nextpage">松开刷新</string>
-    
-    <string name="about_dialog_title">关于</string>
-    <string name="about_dialog_msg">AnyApp</string>
-    <string name="about_dialog_positive">好的</string>
     
     <string name="network_dialog_title">网络不可用!</string>
     <string name="network_dialog_msg">没有可用的网络，请检查网络设置.</string>

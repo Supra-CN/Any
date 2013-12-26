@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="18" />
+         />
 
     <!-- 必须申明的权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -35,6 +35,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity 
+            android:name="tw.supra.anyren.AboutDialogActivity"
+            android:launchMode="singleTop"
+			android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@style/Theme.CustomDialog" />
     </application>
 
 </manifest>

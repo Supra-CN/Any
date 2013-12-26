@@ -7,7 +7,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import tw.supra.anyren.MainActivity;
 import tw.supra.anyren.R;
-import tw.supra.anyren.view.PullToRefreshWebView;
+import tw.supra.anyren.views.PullToRefreshWebView;
 
 public class UIManager {
     

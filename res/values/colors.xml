@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <color name="trans_blue">#7700ddff</color>
-        <color name="renren_blue">#ff005eac</color>
+
+    <color name="trans_blue">#aa33b5e5</color>
+    <color name="renren_blue">#ff005eac</color>
+    <color name="trans_red">#aaff4444</color>
+    <color name="trans_orange">#aaffbb33</color>
+    <color name="trans_purple">#dd9932cd</color>
+    <color name="purple">#ff9932cd</color>
+    <color name="trans_green">#ff00ff00</color>
+    <color name="green">#ff00ff00</color>
+    <color name="text_bg">#aadda0dd</color>
+    <color name="red">#ffff0000</color>
+
 </resources>
