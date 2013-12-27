@@ -10,6 +10,8 @@
         \n\nAnyApp系列应用区分\"软件本身\"和\"展示内容\"两部分:
         \n	其\"软件本身\"受GPLv3许可证保护，任何人都可以参与完善AnyApp，但是作者保留所有合法权利，(如需沟通请参见作者联系方式);
         \n	其\"展示内容\"为内容提供商公布的公共域名，\"软件本身\"并未对其内容做任何修改，不存在任何侵权行为，也不对其内容做任何担保；
+        \n\n感谢：
+        \n  特别感谢 曹梦寒 童鞋的支持！
         \n\n作者联系方式：
         \n  王佳 | Supra.W
         \n  Email：supra.cn@gmail.com
@@ -19,7 +21,7 @@
     <string name="AboutContentBy">content by Renren Inc.</string>
     <string name="AboutVersionText">Version: %1$s (%2$s)</string>
     <string name="AboutLicenseText">License: GPLv3</string>
-    <string name="AboutUrlText">https://github.com/Supra-CN/AnyRen</string>
+    <string name="AboutUrlText">https://github.com/Supra-CN/AnyApp</string>
     <string name="AboutOkBtn">好的</string>
     
     <string name="action_settings">设置</string>
