@@ -22,7 +22,7 @@ import tw.supra.any.ga.GaDef;
 import tw.supra.any.manager.UIManager;
 import tw.supra.any.views.PullToRefreshWebView;
 import tw.supra.any.views.PullToRefreshBase.OnRefreshListener;
-import tw.supra.any.R;
+import tw.supra.any.ren.R;
 
 public class MainActivity extends Activity {
     // private WebView wv;

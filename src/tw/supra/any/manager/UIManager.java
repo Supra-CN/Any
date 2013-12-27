@@ -7,7 +7,7 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import tw.supra.any.app.MainActivity;
 import tw.supra.any.views.PullToRefreshWebView;
-import tw.supra.any.R;
+import tw.supra.any.ren.R;
 
 public class UIManager {
     

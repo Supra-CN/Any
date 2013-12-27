@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import tw.supra.any.manager.UIManager;
-import tw.supra.any.R;
+import tw.supra.any.ren.R;
 
 public class AboutDialogActivity extends Activity {
     @Override
