@@ -14,7 +14,7 @@ import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
 import tw.supra.any.utils.Log;
-import tw.supra.anyapp.R;
+import tw.supra.any.R;
 
 public abstract class PullToRefreshBase<T extends View> extends LinearLayout {
 

@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import tw.supra.anyapp.R;
+import tw.supra.any.R;
 
 public class PullToRefreshLoadingLayout extends FrameLayout {
 
