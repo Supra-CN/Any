@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  */
 
-package tw.supra.anyren;
+package tw.supra.any.app;
 
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
@@ -29,9 +29,9 @@ import android.webkit.WebView;
 
 import com.google.analytics.tracking.android.MapBuilder;
 
-import tw.supra.anyren.ga.GaDef;
-import tw.supra.anyren.manager.UIManager;
-import tw.supra.anyren.utils.Log;
+import tw.supra.any.ga.GaDef;
+import tw.supra.any.manager.UIManager;
+import tw.supra.any.utils.Log;
 
 public class CustomWebChromeClient extends WebChromeClient {
     private static final String LOG_TAG = "supra-anyren";

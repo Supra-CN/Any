@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  */
 
-package tw.supra.anyren;
+package tw.supra.any.app;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,7 +26,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebSettings.PluginState;
 import android.webkit.WebView;
 
-import tw.supra.anyren.utils.Log;
+import tw.supra.any.utils.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

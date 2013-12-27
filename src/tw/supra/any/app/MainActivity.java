@@ -1,5 +1,5 @@
 
-package tw.supra.anyren;
+package tw.supra.any.app;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,10 +18,11 @@ import android.widget.FrameLayout;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 
-import tw.supra.anyren.ga.GaDef;
-import tw.supra.anyren.manager.UIManager;
-import tw.supra.anyren.views.PullToRefreshBase.OnRefreshListener;
-import tw.supra.anyren.views.PullToRefreshWebView;
+import tw.supra.any.ga.GaDef;
+import tw.supra.any.manager.UIManager;
+import tw.supra.any.views.PullToRefreshWebView;
+import tw.supra.any.views.PullToRefreshBase.OnRefreshListener;
+import tw.supra.any.ren.R;
 
 public class MainActivity extends Activity {
     // private WebView wv;

@@ -13,7 +13,7 @@
  * GNU General Public License for more details.
  */
 
-package tw.supra.anyren;
+package tw.supra.any.app;
 
 import android.os.Message;
 import android.webkit.WebView;

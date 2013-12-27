@@ -1,4 +1,4 @@
-package tw.supra.anyren.views;
+package tw.supra.any.views;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import tw.supra.anyren.R;
+import tw.supra.any.ren.R;
 
 public class PullToRefreshLoadingLayout extends FrameLayout {
 

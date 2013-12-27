@@ -1,5 +1,5 @@
 
-package tw.supra.anyren;
+package tw.supra.any.app;
 
 import android.app.Activity;
 import android.content.pm.PackageInfo;
@@ -13,7 +13,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import tw.supra.anyren.manager.UIManager;
+import tw.supra.any.manager.UIManager;
+import tw.supra.any.ren.R;
 
 public class AboutDialogActivity extends Activity {
     @Override
