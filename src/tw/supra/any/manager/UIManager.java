@@ -7,7 +7,6 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 import tw.supra.any.app.MainActivity;
 import tw.supra.any.views.PullToRefreshWebView;
-import tw.supra.anyha.R;
 
 public class UIManager {
     
@@ -34,14 +33,11 @@ public class UIManager {
     }
 
     private ProgressBar getProgressBar() {
-        if (mProgress == null) {
-            mProgress = (ProgressBar) mActivity.findViewById(R.id.progress);
-        }
         return mProgress;
     }
 
     private void setProgress(int progress){
-        getProgressBar().setProgress(progress);
+//        getProgressBar().setProgress(progress);
     }
     
     public void onLoad(int newProgress){
