@@ -43,7 +43,7 @@ public class AboutDialogActivity extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-        UIManager.getInstance().getGaTracker().activityStart(this);
+        UIManager.getInstance().getGaTracker().activityStop(this);
     }
     
     /**
