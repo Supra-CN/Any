@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AnyRen</string>
+    <string name="app_name">AnyHa</string>
     <string name="hello_world">Hello world!</string>
-    <string name="ApplicationDescription">AnyRen is a smart client of \"xxxxxx\".</string>
+    <string name="ApplicationDescription">AnyHa is a smart client of \"Maxthon HaHa.MX\".</string>
     <string name="AboutInfo">
          AnyApp series applications for those original applications who have poor experience provide a better service for user. The user can experience the web service provided by the content providers directly through Anyapp series applications. It is not only convenient for the user, as well as add a 
 distribution channel for content providers.
@@ -14,14 +14,14 @@ distribution channel for content providers.
 thing from its content;
         \n\nAcknowledgements：
         \n  Special thanks to the support of Dear 曹梦寒!
-        \n  Thanks for xxxxxx Inc.
+        \n  Thanks for Maxthon Inc.
         \n\nThe author’s contact information：
         \n  王佳 | Supra.W
         \n  Email：supra.cn@gmail.com
         \n  QQ:273423804
     </string>
     <string name="AboutPoweredBy">powered by Supra\'s Garage.</string>
-    <string name="AboutContentBy">content by xxxxxx Inc.</string>
+    <string name="AboutContentBy">content by HaHa.MX (Maxthon Inc.)</string>
     <string name="AboutVersionText">Version: %1$s (%2$s)</string>
     <string name="AboutLicenseText">License: GPLv3</string>
     <string name="AboutUrlText">https://github.com/Supra-CN/AnyApp</string>
