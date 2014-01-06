@@ -22,7 +22,7 @@ import tw.supra.any.ga.GaDef;
 import tw.supra.any.manager.UIManager;
 import tw.supra.any.views.PullToRefreshWebView;
 import tw.supra.any.views.PullToRefreshBase.OnRefreshListener;
-import tw.supra.any.R;
+import tw.supra.anyha.R;
 
 public class MainActivity extends Activity {
     // private WebView wv;
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
             UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "dialog", "network", null).build());
             getNetWorkDialog().show();
         } else {
-            loadUrl("http://m.renren.com");
+            loadUrl("http://haha.mx");
         }
     }
     
