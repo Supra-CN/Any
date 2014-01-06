@@ -34,7 +34,7 @@ import tw.supra.any.manager.UIManager;
 import tw.supra.any.utils.Log;
 
 public class CustomWebChromeClient extends WebChromeClient {
-    private static final String LOG_TAG = "supra-anyren";
+    private static final String LOG_TAG = "supra-anyapp";
 
     private Bitmap mDefaultVideoPoster = null;
     private View mVideoProgressView = null;
@@ -69,11 +69,12 @@ public class CustomWebChromeClient extends WebChromeClient {
     @Override
     public void onReceivedTitle(WebView view, String title) {
         // mUIManager.onReceivedTitle(view, title);\
+        String url = view.getUrl();
         Log.i(LOG_TAG, "title:" + title);
-        Log.i(LOG_TAG, "title:" + title);
+        Log.i(LOG_TAG, "url:" + url);
         UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "title", title, null).build());
 //        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "originalUrl", view.getOriginalUrl(), null).build());
-        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "url", view.getUrl(), null).build());
+        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "url", url, null).build());
         // if (!view.isPrivateBrowsingEnabled()) {
         // UpdateHistoryTask task = new
         // UpdateHistoryTask(mUIManager.getMainActivity());

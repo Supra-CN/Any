@@ -4,7 +4,7 @@ package tw.supra.any.utils;
 final public class Log  {
 	
 	//打包时自动修改
-	public final static  boolean flag = true;
+	public final static  boolean flag = false;
 	
 
     public static final int VERBOSE = android.util.Log.VERBOSE;
