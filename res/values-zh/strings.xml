@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AnyRen</string>
+    <string name="app_name">AnyHa</string>
     <string name="hello_world">Hello world!</string>
     <string name="ApplicationDescription">AnyRen是一个轻便的\"傲游哈哈\"客户端</string>
     <string name="AboutInfo">
