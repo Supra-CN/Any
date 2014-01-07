@@ -16,19 +16,23 @@
 package tw.supra.any.app;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.webkit.ConsoleMessage;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
+import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebStorage.QuotaUpdater;
 import android.webkit.WebView;
 
 import com.google.analytics.tracking.android.MapBuilder;
 
+import tw.supra.any.R;
 import tw.supra.any.ga.GaDef;
 import tw.supra.any.manager.UIManager;
 import tw.supra.any.utils.Log;
@@ -114,16 +118,24 @@ public class CustomWebChromeClient extends WebChromeClient {
     // return true;
     // }
 
-    // public void openFileChooser(ValueCallback<Uri> uploadMsg) {
-    // mUIManager.setUploadMessage(uploadMsg);
-    // Intent i = new Intent(Intent.ACTION_GET_CONTENT);
-    // i.addCategory(Intent.CATEGORY_OPENABLE);
-    // i.setType("*/*");
-    // mUIManager.getMainActivity().startActivityForResult(
-    // Intent.createChooser(i,
-    // mUIManager.getMainActivity().getString(R.string.FileChooserPrompt)),
-    // TintBrowserActivity.ACTIVITY_OPEN_FILE_CHOOSER);
-    // }
+
+    public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+        String acceptType = "";
+        openFileChooser(uploadMsg, acceptType);
+      }
+    
+    // 3.0 + 调用这个方法
+    public void openFileChooser(ValueCallback<Uri> uploadMsg,
+            String acceptType) {
+        String capture = "";
+        openFileChooser(uploadMsg, acceptType, capture);
+    }
+      
+      // Android > 4.1.1 调用这个方法
+      public void openFileChooser(ValueCallback<Uri> uploadMsg,
+        String acceptType, String capture) {
+          UIManager.getInstance().openFileChooser(uploadMsg, acceptType, capture);          
+      }
 
     // @Override
     // public Bitmap getDefaultVideoPoster() {
