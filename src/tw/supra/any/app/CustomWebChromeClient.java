@@ -16,7 +16,6 @@
 package tw.supra.any.app;
 
 import android.annotation.TargetApi;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -32,7 +31,6 @@ import android.webkit.WebView;
 
 import com.google.analytics.tracking.android.MapBuilder;
 
-import tw.supra.any.R;
 import tw.supra.any.ga.GaDef;
 import tw.supra.any.manager.UIManager;
 import tw.supra.any.utils.Log;

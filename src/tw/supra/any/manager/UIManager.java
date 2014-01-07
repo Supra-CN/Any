@@ -9,9 +9,9 @@ import android.widget.ProgressBar;
 
 import com.google.analytics.tracking.android.EasyTracker;
 
-import tw.supra.any.R;
 import tw.supra.any.app.MainActivity;
 import tw.supra.any.views.PullToRefreshWebView;
+import tw.supra.anyha.R;
 
 public class UIManager {
     private static final String LOG_TAG = "supra-anyren";
