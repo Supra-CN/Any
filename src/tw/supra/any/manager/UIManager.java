@@ -14,7 +14,7 @@ import tw.supra.any.views.PullToRefreshWebView;
 import tw.supra.anyha.R;
 
 public class UIManager {
-    private static final String LOG_TAG = "supra-anyren";
+    private static final String LOG_TAG = "supra-anyapp";
 
     private static UIManager instance;
     private MainActivity mActivity;
