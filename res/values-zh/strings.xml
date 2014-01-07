@@ -40,5 +40,8 @@
     <string name="exit_dialog_positive">退出</string>
     <string name="exit_dialog_neutral">最小化</string>
     <string name="exit_dialog_negative">取消</string>
+    
+    <string name="file_chooser_prompt">选择要上传的文件</string>
+    
 
 </resources>

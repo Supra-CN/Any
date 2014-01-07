@@ -47,5 +47,7 @@ thing from its content;
     <string name="exit_dialog_positive">Exit</string>
     <string name="exit_dialog_neutral">Hide</string>
     <string name="exit_dialog_negative">Cancel</string>
+    
+    <string name="file_chooser_prompt">Choose file for upload</string>
 
 </resources>

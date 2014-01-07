@@ -26,6 +26,8 @@ import tw.supra.any.R;
 
 public class MainActivity extends Activity {
     // private WebView wv;
+    public static final int ACTIVITY_REQUEST_FILE_CHOOSER = 0;
+    
     private PullToRefreshWebView mContainer;
     private AlertDialog mAboutDialog;
     private AlertDialog mNetworkDialog;
@@ -102,6 +104,19 @@ public class MainActivity extends Activity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case ACTIVITY_REQUEST_FILE_CHOOSER:
+                UIManager.getInstance().onFileChooserResult(resultCode, data);
+                break;
+
+            default:
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public PullToRefreshWebView getContainer() {
