@@ -1,4 +1,47 @@
 <resources>
     <string name="app_name">any</string>
+
+    <!--<string name="app_name">AnyRen</string>-->
+    <string name="hello_world">Hello world!</string>
+    <string name="ApplicationDescription">AnyRen is a smart client of renren.</string>
+    <string name="AboutInfo">
+        AnyApp系列应用为那些体验欠佳的原生应用提供了另一种服务用户的方式，用户通过AnyApp系列应用，用户可直接体验到内容商提供的web服务，这不仅方便了用户，同时也为内容提供商增加了一个分发渠道。
+        \n\nAnyApp系列应用对用户永久免费;
+        \n\nAnyApp系列应用区分"软件本身"和"展示内容"两部分:
+        \n	其"软件本身"受GPLv3许可证保护，任何人都可以参与完善AnyApp，但是作者保留所有合法权利，(如需沟通请参见作者联系方式);
+        \n	其"展示内容"为内容提供商公布的公共域名，"软件本身"并未对其内容做任何修改，不存在任何侵权行为，也不对其内容做任何担保；
+        \n\n作者联系方式：
+        \n  王佳 | Supra.W
+        \n  Email：supra.cn@gmail.com
+        \n  QQ:273423804
+    </string>
+    <string name="AboutPoweredBy">powered by Supra\'s Garage.</string>
+    <string name="AboutContentBy">content by Renren Inc.</string>
+    <string name="AboutVersionText">Version: %1$s (%2$s)</string>
+    <string name="AboutLicenseText">License: GPLv3</string>
+    <string name="AboutUrlText">https://github.com/Supra-CN/AnyRen</string>
+    <string name="AboutOkBtn">Okay</string>
+
     <string name="action_settings">Settings</string>
+    <string name="action_clean">Clean</string>
+    <string name="action_about">About</string>
+    <string name="action_exit">Exit</string>
+
+    <string name="readmode_pull_nextpage">Pull to reload</string>
+    <string name="readmode_refresh_nextpage">Loading&#8230;</string>
+    <string name="readmode_release_nextpage">Release to go to reload</string>
+
+    <string name="network_dialog_title">Network Not Available!</string>
+    <string name="network_dialog_msg">there is no available network! please checkout network settings.</string>
+    <string name="network_dialog_positive">Setting</string>
+    <string name="network_dialog_neutral">Exit</string>
+    <string name="network_dialog_negative">Cancel</string>
+
+    <string name="exit_dialog_title">Exit</string>
+    <string name="exit_dialog_msg">What do you want?</string>
+    <string name="exit_dialog_positive">Exit</string>
+    <string name="exit_dialog_neutral">Hide</string>
+    <string name="exit_dialog_negative">Cancel</string>
+
+
 </resources>
