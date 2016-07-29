@@ -21,6 +21,12 @@ android {
         targetCompatibility JavaVersion.VERSION_1_7
     }
     productFlavors {
+        ha {
+            applicationId 'tw.supra.any.ha'
+        }
+        ren {
+            applicationId 'tw.supra.any.ren'
+        }
     }
 }
 
