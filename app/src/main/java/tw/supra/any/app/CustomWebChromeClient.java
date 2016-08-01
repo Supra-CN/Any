@@ -69,8 +69,9 @@ public class CustomWebChromeClient extends WebChromeClient {
     @Override
     public void onReceivedTitle(WebView view, String title) {
         // mUIManager.onReceivedTitle(view, title);\
+        String url = view.getUrl();
         Log.i(LOG_TAG, "title:" + title);
-        Log.i(LOG_TAG, "title:" + title);
+        Log.i(LOG_TAG, "url:" + url);
         UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "title", title, null).build());
 //        UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent("ACTION_VIEW", "originalUrl", view.getOriginalUrl(), null).build());
         UIManager.getInstance().getGaTracker().send(MapBuilder.createEvent(GaDef.ACTION_VIEW, "url", view.getUrl(), null).build());
